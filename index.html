@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile Card</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration for Inter font and general styling -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Apply Inter font universally and ensure smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Profile Card Container -->
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-xl shadow-2xl overflow-hidden transform transition-all hover:scale-[1.01] duration-300">
+        
+        <!-- Header Background & Avatar -->
+        <div class="relative h-24 bg-gradient-to-r from-blue-500 to-indigo-600">
+            <!-- Placeholder for a decorative background image if needed -->
+        </div>
+
+        <div class="flex flex-col items-center -mt-12 p-6">
+            <!-- Avatar -->
+            <img class="w-24 h-24 object-cover rounded-full border-4 border-white shadow-lg"
+                 src="https://placehold.co/96x96/4F46E5/ffffff?text=U"
+                 alt="User Avatar"
+                 onerror="this.onerror=null; this.src='https://placehold.co/96x96/E0E7FF/4F46E5?text=P';"
+            >
+
+            <!-- Name and Title -->
+            <h1 class="text-2xl font-bold text-gray-900 mt-4">Jireh John</h1>
+            <p class="text-sm text-indigo-600 font-medium mt-1 uppercase tracking-wider">Illegal Seller</p>
+            
+            <!-- Bio/Description -->
+            <p class="text-center text-gray-500 mt-4 text-sm leading-relaxed">
+                Building accessible and highly performant user interfaces with a focus on modern web standards and responsive design. Passionate about clean code and user experience.
+            </p>
+
+            <!-- Stats/Metrics (Optional but nice to have) -->
+            <div class="flex justify-around w-full mt-6 border-t border-b py-3 text-center">
+                <div class="px-4">
+                    <span class="block text-lg font-semibold text-gray-800">12</span>
+                    <span class="block text-xs text-gray-500">Projects</span>
+                </div>
+                <div class="px-4 border-l border-r">
+                    <span class="block text-lg font-semibold text-gray-800">4.8k</span>
+                    <span class="block text-xs text-gray-500">Followers</span>
+                </div>
+                <div class="px-4">
+                    <span class="block text-lg font-semibold text-gray-800">3</span>
+                    <span class="block text-xs text-gray-500">Years Exp</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center space-x-4 mt-6 w-full">
+                <!-- Connect Button -->
+                <button onclick="showMessage('Connect button clicked! (Simulated)')"
+                        class="flex-1 px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 transition duration-150 transform hover:scale-[1.03]">
+                    Connect
+                </button>
+                <!-- Message Button -->
+                <button onclick="showMessage('Message button clicked! (Simulated)')"
+                        class="flex-1 px-4 py-2 text-sm font-semibold text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-50 transition duration-150 transform hover:scale-[1.03]">
+                    Message
+                </button>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- Custom Message Box for simulating alerts -->
+    <div id="messageBox" class="fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none">
+        Simulated message
+    </div>
+
+    <!-- JavaScript for button actions (Simulated) -->
+    <script>
+        // Function to simulate an alert (since real alerts are disabled)
+        function showMessage(text) {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = text;
+            messageBox.classList.remove('opacity-0', 'pointer-events-none');
+            messageBox.classList.add('opacity-100');
+
+            setTimeout(() => {
+                messageBox.classList.remove('opacity-100');
+                messageBox.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+</body>
+</html>
